@@ -1,0 +1,64 @@
+body {
+    background-color: #f3f2ef;
+}
+#motto {
+    text-align: right;
+    color: rgb(16, 125, 221)
+}
+
+#top-menu-bar {
+    text-align: center;
+    background-color:  #334455;
+    color: rgb(26, 123, 207); 
+    margin: 0;
+    padding: 0;
+}
+
+#top-menu-bar li {
+    display: inline;
+    margin: 0;
+    padding:0;
+}
+
+#top-menu-bar a {
+    text-decoration: none;
+    padding: 0 15px 0 15px;
+    color: rgb(245, 248, 250);
+}
+#top-menu-bar a:visited {
+    color: aliceblue;
+}
+#top-menu-bar a:hover {
+    
+    color:#334455 ;
+    background-color: #fff;
+}
+
+.page {
+    border: 1px solid rgb(129, 129, 129);
+    background: white;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: none;
+}
+
+.page h3 {
+    margin: 0 0 5px 0;
+}
+
+.page ul{
+    padding-left: 20px ;
+    margin: 0 0 5px 0;
+}
+.favourit {
+    color: rgb(8, 189, 54);
+}
+td {
+    color: aqua;
+    padding: 5px 10px ;}
+    
+video {
+    max-width: 288px;
+    padding-top: 10px;
+}
