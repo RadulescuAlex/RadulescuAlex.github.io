@@ -13,18 +13,20 @@ var wellcome = getInfo(myName);
 console.info(wellcome);
 
 
+function showhome () {
+    document.getElementById('languages').style.display='none';
+    document.getElementById('skills').style.display='none';
+    document.getElementById('project').style.display='none';
+    document.getElementById('home').style.display='block';
+}
+
 function showskills () {
     document.getElementById('home').style.display='none';
     document.getElementById('project').style.display='none';
     document.getElementById('languages').style.display='none';
     document.getElementById('skills').style.display='block';
 }
-function showhome () {
-    document.getElementById('home').style.display='block';
-    document.getElementById('skills').style.display='none';
-    document.getElementById('project').style.display='none';
-    document.getElementById('languages').style.display='none';
-}
+
 function showproject () {
     document.getElementById('home').style.display='none';
     document.getElementById('languages').style.display='none';
