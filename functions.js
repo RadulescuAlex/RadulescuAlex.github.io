@@ -29,28 +29,38 @@ function showpage(id){
 
 }
 
-function hideAllPages() {
-    hidepage('skills');
-    hidepage('project');
-    hidepage('languages');
-    hidepage('home');
+function hideAllPages(){
+    var pageIds = [
+        'home', 'skills', 'project', 'languages'
+    ];
+    var i = 0;
+
+    
+    while(i < pageIds. length) {
+        console.info('i =', i)
+        // hidepage(pageIds[i++]);
+        hidepage(pageIds[i]);
+        i++; 
+    }
 }
 
 function showhome () {
-    hideAllPages()
+    hideAllPages();
     showpage('home');
 }
 
 function showskills () {
-    hideAllPages()
+    hideAllPages();
     showpage('skills');
 }
 
 function showproject () {
-    hideAllPages()
+    hideAllPages();
     showpage('project')
 }
 function showlanguages () {
-    hideAllPages()
+    hideAllPages();
     showpage('languages')
 }
+
+showskills();
