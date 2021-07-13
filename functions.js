@@ -12,7 +12,7 @@ function highlight(el) {
         el.style.borderColor = '#99df88';
     }, 200);
     setTimeout(function () {
-        el.style.borderColor = '#e0dfdc';
+        el.style.borderColor = '';
     }, 300);
 }
 

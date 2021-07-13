@@ -24,6 +24,10 @@ body {
     text-decoration: none;
     padding: 0 15px 0 15px;
     color: rgb(245, 248, 250);
+    display: inline-block;
+    border-radius: .2em;
+    border: 1px solid transparent;
+    transition: .5s;
 }
 #top-menu-bar a:visited {
     color: aliceblue;
@@ -61,4 +65,8 @@ td {
 video {
     max-width: 288px;
     padding-top: 10px;
+}
+
+#img {
+    border-radius: 5em;
 }
