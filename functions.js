@@ -33,15 +33,10 @@ function hideAllPages(){
     var pageIds = [
         'home', 'skills', 'project', 'languages'
     ];
-    var i = 0;
-
-    
-    while(i < pageIds. length) {
-        console.info('i =', i)
-        // hidepage(pageIds[i++]);
-        hidepage(pageIds[i]);
-        i++; 
-    }
+   
+    pageIds.forEach(function(pageId, ){
+        hidepage(pageId)
+    });
 }
 
 function showhome () {
