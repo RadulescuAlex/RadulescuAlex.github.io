@@ -17,9 +17,7 @@ function highlight(el) {
 }
 
 function showpage(id){
-    console.info('show page', id);
     var page = document.getElementById(id);
-    console.info('show', page);
     if (page) {
         page.style.display='block';
         highlight(page)
@@ -29,13 +27,10 @@ function showpage(id){
 
 }
 
-function hideAllPages(){
-    var pageIds = [
-        'home', 'skills', 'project', 'languages'
-    ];
-   
-    pageIds.forEach(function(pageId, ){
-        hidepage(pageId)
+function hideAllPages() {
+    var pages = Array.from(document.getElementsByClassName('page'));
+    pages.forEach(function(page){
+        hidepage(page.id);
     });
 }
 
