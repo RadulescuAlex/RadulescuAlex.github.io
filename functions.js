@@ -24,6 +24,12 @@ function show(id){
     } else {
     console.warn('pagina cu id-ul % nu exista', id);
     }
+    var oldlink = document.querySelector('a[data-page].active');
+    if(oldlink){
+    oldlink.classList.remove('active');
+    }
+    var link = document.querySelector(`a[data-page=${id}]`);
+    link.classList.add("active");
 }
 
 function hideAllPages() {
