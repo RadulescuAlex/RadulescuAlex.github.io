@@ -44,7 +44,7 @@ function showPage(id) {
     show(id);
 }
 
-show('home');
+show('skills');
 
 document.querySelector('#top-menu-bar').addEventListener('click', function(e){
     if(e.target.matches('a')) {
@@ -54,3 +54,17 @@ document.querySelector('#top-menu-bar').addEventListener('click', function(e){
     
     }     
 })
+
+
+var skills = [
+    "html",
+    "js",
+    "css"
+];
+
+var skillsHtml = skills.map(function(skill){
+    console.info(skill);
+    return `<li>${skill}</li>`;
+}).join('');
+
+document.querySelector("#skills ul").innerHTML = skillsHtml;
