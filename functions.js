@@ -55,19 +55,21 @@ document.querySelector('#top-menu-bar').addEventListener('click', function(e){
     }     
 })
 
+var skills = [];
 
-var skills = [
-    { name: "html", favorit: true, endorsements: 7},
-    { name: "js", endorsements: 10},
-    { name: "css", favorit: true, endorsements: 5 }
-];
+function showSkills(skills){
+    var skillsHtml = skills.map(function(skill){
+        var favorit = skill.favorit ? 'class= favorit' : '';
+        var endorsements = skill.endorsements > 5 ? `<span>${skill.endorsements}</span>` : '';
+        return `<li ${favorit}>${skill.name} ${endorsements}</li>`;
+    }).join('');
+    
+    document.querySelector("#skills ul").innerHTML = skillsHtml;
+}
 
-var skillsHtml = skills.map(function(skill){
-    console.info(skill.name, skill.endorsements);
-    var favorit = skill.favorit ? 'class= favorit' : '';
-    var endorsements = skill.endorsements > 5 ? `<span>${skill.endorsements}</span>` : '';
-    console.warn('f', favorit, endorsements);
-    return `<li ${favorit}>${skill.name} ${endorsements}</li>`;
-}).join('');
-
-document.querySelector("#skills ul").innerHTML = skillsHtml;
+fetch("data/skills.json").then(function(response) {
+    return response.json();
+}).then(function(skills){
+    window.skills = skills;
+    showSkills(skills);
+})
