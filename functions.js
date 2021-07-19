@@ -17,23 +17,23 @@ function highlight(el) {
 }
 
 function show(id){
-    var page = document.getElementById(id);
+    const page = document.getElementById(id);
     if (page) {
         page.style.display='block';
         highlight(page)
     } else {
     console.warn('pagina cu id-ul % nu exista', id);
     }
-    var oldlink = document.querySelector('a[data-page].active');
+    const oldlink = document.querySelector('a[data-page].active');
     if(oldlink){
     oldlink.classList.remove('active');
     }
-    var link = document.querySelector(`a[data-page=${id}]`);
+    const link = document.querySelector(`a[data-page=${id}]`);
     link.classList.add("active");
 }
 
 function hideAllPages() {
-    var pages = Array.from(document.getElementsByClassName('page'));
+    const pages = Array.from(document.getElementsByClassName('page'));
     pages.forEach(function(page){
         hide(page.id);
     });
@@ -48,19 +48,19 @@ show('skills');
 
 document.querySelector('#top-menu-bar').addEventListener('click', function(e){
     if(e.target.matches('a')) {
-        var id = e.target.getAttribute('data-page');
+        const id = e.target.getAttribute('data-page');
         showPage(id);
         highlight(e.target);
     
     }     
 })
 
-var skills = [];
+window.skills = [];
 
 function showSkills(skills){
-    var skillsHtml = skills.map(function(skill){
-        var favorit = skill.favorit ? 'class= favorit' : '';
-        var endorsements = skill.endorsements > 5 ? `<span>${skill.endorsements}</span>` : '';
+    const skillsHtml = skills.map(function(skill){
+        const favorit = skill.favorit ? 'class= favorit' : '';
+        const endorsements = skill.endorsements > 5 ? `<span>${skill.endorsements}</span>` : '';
         return `<li ${favorit}>${skill.name.toLowerCase()} ${endorsements}</li>`;
     }).join('');
     
@@ -68,8 +68,8 @@ function showSkills(skills){
 }
 
 function sortSkillsByName(a, b){
-    var aName = a.name.toUpperCase();
-    var bName = b.name.toUpperCase();
+    const aName = a.name.toUpperCase();
+    const bName = b.name.toUpperCase();
     if (aName < bName) {
         return -1;
     }
@@ -91,5 +91,3 @@ fetch("data/skills.json").then(function(response) {
     window.skills = skills;
     showSkills(skills);
 })
-
-
